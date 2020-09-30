@@ -3,6 +3,10 @@ defmodule SendNode do
     {:ok, _} = Node.start(:send, :shortnames, 15000)
   end
 
+  def connect(name) do
+    Node.connect(:"#{name}")
+  end
+
   def self() do
     Node.self()
   end
