@@ -15,6 +15,10 @@ defmodule SendNode do
     Node.list()
   end
 
+  def ping(name) do
+    Node.ping(:"#{name}")
+  end
+
   def broadcast_ping do
     for node_list <- list do
       Node.ping(node_list)
