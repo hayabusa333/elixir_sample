@@ -4,4 +4,10 @@ defmodule RecvProcess do
       {true, message} -> message
     end
   end
+
+  def ping do
+    receive do
+      {sender, msg} -> "pong"
+    end
+  end
 end
