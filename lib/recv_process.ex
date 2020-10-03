@@ -7,7 +7,10 @@ defmodule RecvProcess do
 
   def ping do
     receive do
-      {sender, msg} -> "pong"
+      {:ping} -> :pong
+      {_} -> :pang
+    after
+      1_000 -> "nothing after 1s"
     end
   end
 end
