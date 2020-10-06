@@ -1,7 +1,9 @@
 defmodule RecvProcess do
   def confirm() do
     receive do
-      {true, message} -> message
+      {message} -> message
+    after
+      1_000 -> {:error}
     end
   end
 
