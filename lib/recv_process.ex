@@ -23,4 +23,13 @@ defmodule RecvProcess do
       1_000 -> {:error}
     end
   end
+
+  def add_message do
+    receive do
+      {val, num} -> send self(), {val, num}
+    end
+    {:ok, val} = add
+    send self(), {val}
+    confirm
+  end
 end
