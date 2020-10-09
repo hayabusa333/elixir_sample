@@ -1,5 +1,5 @@
 defmodule RecvProcess do
-  def confirm() do
+  def message do
     receive do
       {message} -> message
     after
@@ -30,6 +30,6 @@ defmodule RecvProcess do
     end
     {:ok, val} = add
     send self(), {val}
-    confirm
+    message
   end
 end

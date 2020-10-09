@@ -1,6 +1,6 @@
 defmodule SendProcess do
   def message(msg) do
-    send self(), {true, msg}
+    send self(), {msg}
   end
 
   def ping do
