@@ -2,7 +2,7 @@ defmodule SampleState do
   @enforce_keys [:val]
   defstruct [:val, :num]
 
-  def new(val, num) when is_integer(val) do
+  def new(val, num) when is_integer(val) and is_integer(num) do
     {:ok, %SampleState{val: val, num: num}}
   end
 
